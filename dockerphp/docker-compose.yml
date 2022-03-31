@@ -11,11 +11,11 @@ services:
     my-app:
         container_name: my-app
         build:
-            context: .
+            context: ./app
             dockerfile: VUE.Dockerfile
         volumes:
-            - '.:/app/project'
-            - '/app/project/node_modules'
+            - '.:/app'
+            - '/app/node_modules'
         ports:
             - '8081:8080'
     php:

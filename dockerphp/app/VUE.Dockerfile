@@ -1,8 +1,7 @@
-# base image
 #Build Vue Project
 FROM node:12.18.1-alpine AS build
-WORKDIR /app/Project
-COPY package.json /app/project/package.json
+WORKDIR /app
+COPY package.json  ./app/package.json
 RUN npm install
 COPY . .
 RUN npm run build
