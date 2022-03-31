@@ -18,6 +18,13 @@ services:
             - '/app/node_modules'
         ports:
             - '8081:8080'
+    VUE-nginx:
+        image: nginx:latest
+        ports:
+            - "81:81"
+        volumes:
+            - ./nginx.conf:/etc/nginx/nginx.conf
+            - ./app:/app
     php:
         build:
             context: .
